@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using OtpNet;
 using secretpoc.Data;
 using secretpoc.Models;
@@ -93,7 +94,8 @@ namespace secretpoc.Controllers
             }
 
             HttpContext.Session.SetString(model.ActionKey, DateTime.UtcNow.ToString());
-            return RedirectToAction("Index", "Home"); // Or redirect based on ActionKey
+            return RedirectToAction($"{model.ActionKey}", "PortalUsers", new { success = $"{model.ActionKey}", type = "" });
+            //return RedirectToAction("Index", "Home"); // Or redirect based on ActionKey
         }
 
         private PortalUser GetCurrentUser()
