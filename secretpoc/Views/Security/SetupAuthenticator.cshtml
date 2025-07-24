@@ -8,6 +8,18 @@
 <p>If needed, enter this code manually:</p>
 <code>@Model.SecretKey</code>
 
+<p>
+    Download a two-factor authenticator app like Microsoft Authenticator for
+    <a href="https://go.microsoft.com/fwlink/?Linkid=825072" class="text-link" target="_blank">Android</a> and
+    <a href="https://go.microsoft.com/fwlink/?Linkid=825073" class="text-link" target="_blank">iOS</a> or
+    Google Authenticator
+    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en" class="text-link" target="_blank">Android</a> and
+    <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8" target="_blank" class="text-link">iOS</a>.
+</p>
+<p>
+    Scan the QR Code
+    <div id="qrCode"></div>
+<p id="qrCodeData" data-url="@Html.Raw(@Model.QrCodeUrl)"></p>
 <form asp-action="SetupAuthenticator" method="post">
     <div class="form-group">
         <label>Enter the 6-digit code from your app</label>

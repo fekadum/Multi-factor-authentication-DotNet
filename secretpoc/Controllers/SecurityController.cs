@@ -65,6 +65,13 @@ namespace secretpoc.Controllers
             return View(new TOTPVerificationViewModel { ActionKey = actionKey });
         }
 
+        [HttpGet]
+        public IActionResult SetupSuccess()
+        {
+
+            return View();
+        }
+
         [HttpPost]
         public IActionResult VerifyAuthenticator(TOTPVerificationViewModel model)
         {
